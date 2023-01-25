@@ -123,30 +123,28 @@ class SignInPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
-                  child: Row(
-                    children: [
-                      const Text(
-                        "Don't have an account ?  ",
-                        style: TextStyle(fontWeight: FontWeight.w500),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Don't have an account ?  ",
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) => const SignUpPage()));
+                      },
+                      child: const Text(
+                        "Sign Up",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.mainGreen),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (builder) => const SignUpPage()));
-                        },
-                        child: const Text(
-                          "Sign Up",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w800,
-                              color: AppColors.mainGreen),
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 )
               ],
             ),

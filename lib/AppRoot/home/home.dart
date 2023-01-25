@@ -49,8 +49,9 @@ class Home extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Wrap(
+              spacing: 10,
+              runSpacing: 15,
               children: [
                 InsuranceCard(
                   data: "Estate",
@@ -63,8 +64,9 @@ class Home extends StatelessWidget {
               ],
             ),
             SizedBox(height: 15),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Wrap(
+              spacing: 10,
+              runSpacing: 15,
               children: [
                 InsuranceCard(
                   data: "Travels",
