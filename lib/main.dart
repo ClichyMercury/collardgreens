@@ -1,3 +1,4 @@
+import 'package:collard_greens/AppRoot/history/history.dart';
 import 'package:collard_greens/features/connection/Sign_In_Page.dart';
 import 'package:collard_greens/features/profile/userPage.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
             bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
           ) */
       ),
-      home: SignInPage(),
+      home: History(),
     );
   }
 }

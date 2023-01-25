@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:collard_greens/AppRoot/widget/app_bar.dart';
-import 'package:collard_greens/AppRoot/widget/card.dart';
+import 'package:collard_greens/AppRoot/home/widget/card.dart';
 import 'package:collard_greens/AppRoot/widget/drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +18,9 @@ class Home extends StatelessWidget {
     ];
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: buildAppBar(context),
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       body: SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.all(30.0),

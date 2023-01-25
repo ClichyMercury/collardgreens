@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../ui/colors/app_colors.dart';
+
 Widget textFild({
   required String hintTxt,
   required TextEditingController controller,
@@ -10,12 +12,11 @@ Widget textFild({
   String? errorText,
   required bool enabled,
 }) {
-  Color mainGray = const Color.fromARGB(1000, 234, 232, 232);
   return Container(
     height: 75.0,
     width: 320,
     decoration: BoxDecoration(
-      color: mainGray,
+      color: AppColors.mainGray,
       boxShadow: const [
         BoxShadow(
             color: Colors.black,
