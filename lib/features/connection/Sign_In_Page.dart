@@ -1,7 +1,8 @@
 import 'package:collard_greens/conponents/textfield.dart';
 import 'package:collard_greens/features/connection/Sign_Up_page.dart';
 import 'package:flutter/material.dart';
-
+import '../../AppRoot/home/home.dart';
+import '../../ui/colors/app_colors.dart';
 import '../../conponents/elevatedButton.dart';
 
 class SignInPage extends StatelessWidget {
@@ -11,19 +12,14 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController emailCtrl = TextEditingController();
     TextEditingController passWCtrl = TextEditingController();
-    Color mainGreen = const Color.fromARGB(
-      1000,
-      10,
-      87,
-      92,
-    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(25),
+          padding: const EdgeInsets.all(25),
           child: Container(
-            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
             child: Column(
               children: [
                 Row(
@@ -71,23 +67,27 @@ class SignInPage extends StatelessWidget {
                     margin: const EdgeInsets.fromLTRB(150, 15, 0, 25),
                     child: TextButton(
                         onPressed: (() {}),
-                        child: Text(
+                        child: const Text(
                           "Forgot Password ?",
                           style: TextStyle(
-                              fontWeight: FontWeight.w800, color: mainGreen),
+                              fontWeight: FontWeight.w800,
+                              color: AppColors.mainGreen),
                         )),
                   ),
                 ),
                 Mainbutton(
-                  btnColor: mainGreen,
-                  onTap: () {},
+                  btnColor: AppColors.mainGreen,
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (builder) => const Home()));
+                  },
                   text: 'Sign In',
                 ),
                 const SizedBox(height: 25),
-                Text(
+                const Text(
                   "or",
-                  style:
-                      TextStyle(fontWeight: FontWeight.w500, color: mainGreen),
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500, color: AppColors.mainGreen),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(10, 30, 15, 15),
@@ -138,10 +138,11 @@ class SignInPage extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (builder) => const SignUpPage()));
                         },
-                        child: Text(
+                        child: const Text(
                           "Sign Up",
                           style: TextStyle(
-                              fontWeight: FontWeight.w800, color: mainGreen),
+                              fontWeight: FontWeight.w800,
+                              color: AppColors.mainGreen),
                         ),
                       )
                     ],

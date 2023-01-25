@@ -1,6 +1,6 @@
 import 'package:collard_greens/conponents/textfield.dart';
 import 'package:flutter/material.dart';
-
+import '../../ui/colors/app_colors.dart';
 import '../../conponents/elevatedButton.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -12,12 +12,7 @@ class SignUpPage extends StatelessWidget {
     TextEditingController emailCtrl = TextEditingController();
     TextEditingController passWCtrl = TextEditingController();
     TextEditingController cfrmpassWCtrl = TextEditingController();
-    Color mainGreen = const Color.fromARGB(
-      1000,
-      10,
-      87,
-      92,
-    );
+  
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -80,15 +75,15 @@ class SignUpPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
                 Mainbutton(
-                  btnColor: mainGreen,
+                  btnColor: AppColors.mainGreen,
                   onTap: () {},
                   text: 'Create',
                 ),
                 const SizedBox(height: 25),
-                Text(
+                const Text(
                   "By creating your account you accept the conditions of use of your data as part of the improvement of our services",
                   style:
-                      TextStyle(fontWeight: FontWeight.w500, color: mainGreen),
+                      TextStyle(fontWeight: FontWeight.w500, color: AppColors.mainGreen),
                 ),
               ],
             ),
