@@ -17,8 +17,7 @@ class History extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(context),
-      drawer: const CustomDrawer(),
+
       body: SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -84,11 +83,21 @@ class History extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     ScrollList(data: "assets/images/NSIA.jpeg"),
+                    SizedBox(width: 10),
                     ScrollList(data: "assets/images/gna.png"),
+                    SizedBox(width: 10),
                     ScrollList(data: "assets/images/atlantique.jpg"),
                   ],
                 )
               ]),
+            ),
+            SizedBox(height: 20),
+            Container(
+              height: 250,
+              padding: EdgeInsets.symmetric(vertical: 15),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/IMG_2135.PNG"))),
             )
           ],
         ),

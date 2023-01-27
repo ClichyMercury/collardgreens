@@ -1,15 +1,11 @@
-
 import 'package:flutter/material.dart';
 
-
-
-
 import '../../ui/colors/app_colors.dart';
-import '../../ui/svg_icons/svg_icons.dart';
 
 class CustomDrawer extends StatefulWidget {
-
-  const CustomDrawer({Key? key, }) : super(key: key);
+  const CustomDrawer({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<CustomDrawer> createState() => _CustomDrawerState();
@@ -28,48 +24,37 @@ class _CustomDrawerState extends State<CustomDrawer> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-             
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 child: Column(
-                  children: [
-                    const SizedBox(height: 20),
-                    const DrawerItem(
-                      text: "Week challenges",
-                      icon: SvgIcons.calendarWeek,
+                  children: const [
+                    SizedBox(height: 50),
+                    Text(
+                      "Welcome to best app of insurance of west africa",
+                      style: TextStyle(color: Colors.white, fontSize: 25),
                     ),
-                    const SizedBox(height: 20),
-                    const DrawerItem(
-                      text: "My Ranking",
-                      icon: SvgIcons.rankingStar,
+                    SizedBox(height: 50),
+                    DrawerItem(
+                      text: "Meeting",
+                      icon: Icons.calendar_view_week,
                     ),
-                    const SizedBox(height: 20),
-                    const DrawerItem(
-                      text: "My Calendar & Meets ",
-                      icon: SvgIcons.calendar,
+                    SizedBox(height: 20),
+                    DrawerItem(
+                      text: "Rating",
+                      icon: Icons.star,
                     ),
-                    const SizedBox(height: 40),
+                    SizedBox(height: 20),
+                    DrawerItem(
+                      text: "Share",
+                      icon: Icons.share,
+                    ),
+                    SizedBox(height: 20),
+                    DrawerItem(
+                      text: "more apps",
+                      icon: Icons.apps_outlined,
+                    ),
+                    SizedBox(height: 40),
                     //Logout
-                    Material(
-                      color: Colors.transparent,
-                      child: GestureDetector(
-                        onTap: (() {}),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(Icons.logout),
-                            SizedBox(width: 10),
-                            Expanded(
-                              child: Text(
-                                "Logout",
-                                style: TextStyle(color: AppColors.mainWhite),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),
@@ -80,7 +65,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
     );
   }
 
-  
   //
   //:separated method to access context
   void navigateTo(Widget page) {
@@ -91,7 +75,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
 class DrawerItem extends StatelessWidget {
   final String text;
-  final SvgIcons icon;
+  final IconData icon;
   const DrawerItem({
     Key? key,
     required this.text,
@@ -103,9 +87,9 @@ class DrawerItem extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgIcon(
-          icon: icon,
-          color: AppColors.mainWhite,
+        Icon(
+          icon,
+          color: Colors.white,
         ),
         const SizedBox(width: 10),
         Expanded(

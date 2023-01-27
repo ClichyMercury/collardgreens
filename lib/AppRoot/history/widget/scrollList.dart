@@ -10,7 +10,6 @@ class ScrollList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
       height: 125,
       width: 125,
       decoration: BoxDecoration(

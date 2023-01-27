@@ -1,7 +1,7 @@
 import 'package:collard_greens/conponents/textfield.dart';
 import 'package:collard_greens/features/connection/Sign_Up_page.dart';
 import 'package:flutter/material.dart';
-import '../../AppRoot/home/home.dart';
+import '../../AppRoot/root.dart';
 import '../../ui/colors/app_colors.dart';
 import '../../conponents/elevatedButton.dart';
 
@@ -79,7 +79,7 @@ class SignInPage extends StatelessWidget {
                   btnColor: AppColors.mainGreen,
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (builder) => const Home()));
+                        MaterialPageRoute(builder: (builder) => const Root()));
                   },
                   text: 'Sign In',
                 ),

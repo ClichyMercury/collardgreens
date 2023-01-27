@@ -19,8 +19,6 @@ class Home extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: buildAppBar(context),
-      drawer: const CustomDrawer(),
       body: SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.all(30.0),
