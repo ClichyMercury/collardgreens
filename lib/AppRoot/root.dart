@@ -1,3 +1,4 @@
+import 'package:collard_greens/AppRoot/account/AccountCard.dart';
 import 'package:collard_greens/AppRoot/history/history.dart';
 import 'package:collard_greens/AppRoot/home/home.dart';
 import 'package:collard_greens/AppRoot/widget/app_bar.dart';
@@ -23,7 +24,7 @@ class _RootState extends State<Root> {
 
   @override
   Widget build(BuildContext context) {
-    final screens = [Home(), History()];
+    final screens = [const Home(), const History(), const AccountCard()];
 
     return Scaffold(
         appBar: buildAppBar(context),
@@ -39,7 +40,7 @@ class _RootState extends State<Root> {
             currentIndex: curID,
             onTap: _setIndex,
             iconSize: 35,
-            items: [
+            items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.category_rounded),
                 label: "Home",
@@ -47,6 +48,10 @@ class _RootState extends State<Root> {
               BottomNavigationBarItem(
                 icon: Icon(Icons.bar_chart),
                 label: "History",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_balance_wallet_rounded),
+                label: "Account",
               ),
             ]));
   }

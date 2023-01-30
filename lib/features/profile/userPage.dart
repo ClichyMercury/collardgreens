@@ -2,6 +2,8 @@ import 'package:collard_greens/features/profile/widget/options.dart';
 import 'package:collard_greens/ui/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
+import '../connection/Sign_In_Page.dart';
+
 class UserPage extends StatelessWidget {
   const UserPage({super.key});
 
@@ -20,7 +22,12 @@ class UserPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => const SignInPage()));
+              },
               icon: const Icon(Icons.logout, color: AppColors.mainGreen))
         ],
       ),

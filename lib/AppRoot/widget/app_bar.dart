@@ -6,12 +6,6 @@ AppBar buildAppBar(context) {
   return AppBar(
       elevation: 0,
       backgroundColor: Colors.white,
-      /* leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.menu,
-            color: AppColors.mainGreen,
-          )), */
       title: Image.asset(
         "assets/images/logo.jpg",
         height: 120,
