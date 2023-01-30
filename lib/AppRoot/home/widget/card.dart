@@ -4,23 +4,23 @@ import 'package:flutter/material.dart';
 class InsuranceCard extends StatelessWidget {
   final IconData icon;
   final String data;
-  /* final Widget touch; */
+  final Widget touch;
   const InsuranceCard({
     super.key,
     required this.icon,
     required this.data,
-    /* required this.touch */
+    required this.touch
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      /* onTap: () {
+      onTap: () {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => touch),
           );
-        }, */
+        },
       child: Container(
         padding: EdgeInsets.all(15),
         margin: EdgeInsets.all(5),

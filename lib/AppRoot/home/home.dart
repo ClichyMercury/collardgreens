@@ -2,7 +2,13 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:collard_greens/AppRoot/widget/app_bar.dart';
 import 'package:collard_greens/AppRoot/home/widget/card.dart';
 import 'package:collard_greens/AppRoot/widget/drawer.dart';
+
+import 'package:collard_greens/features/health/health.dart';
+import 'package:collard_greens/features/realestate/realestate.dart';
+import 'package:collard_greens/features/traveLinsurance/traveLinsurance.dart';
 import 'package:flutter/material.dart';
+
+import '../../features/CarInsurance/CarInsurance.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -10,11 +16,11 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> images = [
-      "assets/images/auto.jpeg",
-      "assets/images/maison.jpeg",
-      "assets/images/microcredit.png",
-      "assets/images/red reduct.jpeg",
-      "assets/images/travel.webp"
+      "assets/images/house.png",
+      "assets/images/car.png",
+      "assets/images/travel.png",
+      "assets/images/health.png",
+      "assets/images/devis.png"
     ];
 
     return Scaffold(
@@ -51,14 +57,16 @@ class Home extends StatelessWidget {
             Wrap(
               spacing: 10,
               runSpacing: 15,
-              children: [
+              children: const [
                 InsuranceCard(
                   data: "Estate",
                   icon: Icons.home,
+                  touch: RealEstate(),
                 ),
                 InsuranceCard(
                   data: "Vehicle",
                   icon: Icons.car_repair_rounded,
+                  touch: CarInsurance(),
                 )
               ],
             ),
@@ -66,14 +74,16 @@ class Home extends StatelessWidget {
             Wrap(
               spacing: 10,
               runSpacing: 15,
-              children: [
+              children: const [
                 InsuranceCard(
                   data: "Travels",
                   icon: Icons.travel_explore,
+                  touch: TraveLinsurance(),
                 ),
                 InsuranceCard(
-                  data: "People",
-                  icon: Icons.people,
+                  data: "Health",
+                  icon: Icons.health_and_safety_outlined,
+                  touch: HealthInsurance(),
                 )
               ],
             ),
