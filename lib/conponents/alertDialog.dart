@@ -1,3 +1,4 @@
+import 'package:collard_greens/ui/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
 Future showAlertDialog(
@@ -11,9 +12,20 @@ Future showAlertDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          icon: const Icon(Icons.warning),
-          title: Text(title),
-          content: Text(content),
+          icon: const Icon(
+            Icons.warning,
+            color: AppColors.mainGreen,
+          ),
+          title: Text(
+            title,
+            style: TextStyle(
+                color: AppColors.mainGreen, fontWeight: FontWeight.bold),
+          ),
+          content: Text(
+            content,
+            style: TextStyle(
+                color: AppColors.mainGreen, fontWeight: FontWeight.normal),
+          ),
           actions: [
             if (cancelActionText != null)
               TextButton(

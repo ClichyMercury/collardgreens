@@ -1,4 +1,5 @@
 import 'package:collard_greens/features/connection/Sign_In_Page.dart';
+import 'package:collard_greens/ui/colors/palette.dart';
 
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Palette.greenToDark,
         fontFamily: 'Inter',
       ),
       home: const SignInPage(),

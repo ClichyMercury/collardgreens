@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
 
-import 'formAddCard.dart';
+import 'widget/formAddCard.dart';
 
 class AccountCard extends StatefulWidget {
   const AccountCard({super.key});

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_form.dart';
 import 'package:flutter_credit_card/credit_card_model.dart';
 
-import '../../ui/colors/app_colors.dart';
+import '../../../ui/colors/app_colors.dart';
 
 class AddCard extends StatelessWidget {
   const AddCard({super.key});
