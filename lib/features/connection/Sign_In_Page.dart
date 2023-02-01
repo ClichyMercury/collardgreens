@@ -2,6 +2,8 @@ import 'package:collard_greens/conponents/textfield.dart';
 import 'package:collard_greens/features/connection/Sign_Up_page.dart';
 import 'package:flutter/material.dart';
 import '../../AppRoot/root.dart';
+import '../../conponents/PWtextfield.dart';
+import '../../conponents/alertDialog.dart';
 import '../../ui/colors/app_colors.dart';
 import '../../conponents/elevatedButton.dart';
 
@@ -48,21 +50,23 @@ class SignInPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         textFild(
+                            prefixIcon: Icons.email,
                             hintTxt: "Email or Phone Number",
                             controller: emailCtrl,
                             keyBordType: TextInputType.emailAddress,
                             textInputAction: TextInputAction.next,
                             enabled: true),
-                        textFild(
-                            hintTxt: "Password",
-                            controller: passWCtrl,
-                            keyBordType: TextInputType.visiblePassword,
-                            textInputAction: TextInputAction.done,
-                            enabled: true)
+                        PWtextFild(
+                          controller: passWCtrl,
+                          enabled: true,
+                          hintTxt: 'Password',
+                          keyBordType: TextInputType.visiblePassword,
+                          textInputAction: TextInputAction.done,
+                        ),
                       ]),
                 ),
                 GestureDetector(
-                  onTap: (() {}),
+                  onTap: () {},
                   child: Container(
                     margin: const EdgeInsets.fromLTRB(150, 15, 0, 25),
                     child: TextButton(
@@ -78,8 +82,19 @@ class SignInPage extends StatelessWidget {
                 Mainbutton(
                   btnColor: AppColors.mainGreen,
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (builder) => const Root()));
+                    if (emailCtrl.text.isNotEmpty &&
+                        passWCtrl.text.isNotEmpty) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (builder) => const Root()));
+                    } else {
+                      showAlertDialog(context,
+                          title: "Email or Password",
+                          content:
+                              "Make sure Email Field and Password Field is not empty before Submit",
+                          defaultActionText: "OK");
+                    }
                   },
                   text: 'Sign In',
                 ),

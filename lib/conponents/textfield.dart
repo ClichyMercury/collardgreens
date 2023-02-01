@@ -11,6 +11,7 @@ Widget textFild({
   FocusNode? focusNode,
   String? errorText,
   required bool enabled,
+  IconData? prefixIcon,
 }) {
   return Container(
     height: 75.0,
@@ -43,6 +44,10 @@ Widget textFild({
             obscureText: isObs,
             keyboardType: keyBordType,
             decoration: InputDecoration(
+                prefixIcon: Icon(
+                  prefixIcon,
+                  color: AppColors.mainGreen,
+                ),
                 enabled: enabled,
                 errorText: errorText,
                 border: InputBorder.none,
@@ -50,11 +55,6 @@ Widget textFild({
                 hintStyle: TextStyle(fontSize: 15)),
           ),
         ),
-        /* SvgPicture.asset(
-          'assets/icon/$image',
-          height: 20.0,
-          color: grayText,
-        ) */
       ],
     ),
   );

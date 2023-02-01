@@ -2,9 +2,24 @@ import 'package:collard_greens/features/profile/widget/options.dart';
 import 'package:collard_greens/ui/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../conponents/alertDialog.dart';
 import '../connection/Sign_In_Page.dart';
 
 class UserPage extends StatelessWidget {
+  Future<void> _confirmSignOut(BuildContext context) async {
+    final didRequestSignOut = await showAlertDialog(
+      context,
+      title: "Logout",
+      content: "Are you sure you want logout ?",
+      cancelActionText: 'Cancel',
+      defaultActionText: "Logout",
+    );
+    if (didRequestSignOut == true) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (builder) => const SignInPage()));
+    }
+  }
+
   const UserPage({super.key});
 
   @override
@@ -23,10 +38,7 @@ class UserPage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (builder) => const SignInPage()));
+                _confirmSignOut(context);
               },
               icon: const Icon(Icons.logout, color: AppColors.mainGreen))
         ],

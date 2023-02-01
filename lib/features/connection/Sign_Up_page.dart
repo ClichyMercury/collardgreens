@@ -2,6 +2,8 @@ import 'package:collard_greens/conponents/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import '../../api/login.dart';
+import '../../conponents/PWtextfield.dart';
+import '../../conponents/alertDialog.dart';
 import '../../ui/colors/app_colors.dart';
 import '../../conponents/elevatedButton.dart';
 
@@ -14,8 +16,6 @@ class SignUpPage extends StatelessWidget {
     TextEditingController emailCtrl = TextEditingController();
     TextEditingController passWCtrl = TextEditingController();
     TextEditingController cfrmpassWCtrl = TextEditingController();
-
-   
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -52,37 +52,52 @@ class SignUpPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         textFild(
+                            prefixIcon: Icons.person,
                             hintTxt: "Complet Name",
                             controller: nameCtrl,
                             keyBordType: TextInputType.emailAddress,
                             textInputAction: TextInputAction.next,
                             enabled: true),
                         textFild(
+                            prefixIcon: Icons.email,
                             hintTxt: "Email or Phone Number",
                             controller: emailCtrl,
                             keyBordType: TextInputType.emailAddress,
                             textInputAction: TextInputAction.next,
                             enabled: true),
-                        textFild(
-                            hintTxt: "Password",
-                            controller: passWCtrl,
-                            keyBordType: TextInputType.visiblePassword,
-                            textInputAction: TextInputAction.done,
-                            enabled: true),
-                        textFild(
-                            hintTxt: "Confirm Password",
-                            controller: cfrmpassWCtrl,
-                            keyBordType: TextInputType.visiblePassword,
-                            textInputAction: TextInputAction.done,
-                            enabled: true)
+                        PWtextFild(
+                          controller: passWCtrl,
+                          enabled: true,
+                          hintTxt: 'Password',
+                          keyBordType: TextInputType.visiblePassword,
+                          textInputAction: TextInputAction.done,
+                        ),
+                        PWtextFild(
+                          controller: cfrmpassWCtrl,
+                          enabled: true,
+                          hintTxt: 'Confirm password',
+                          keyBordType: TextInputType.visiblePassword,
+                          textInputAction: TextInputAction.done,
+                        )
                       ]),
                 ),
                 const SizedBox(height: 30),
                 Mainbutton(
                   btnColor: AppColors.mainGreen,
                   onTap: () {
-                    login(emailCtrl.text, passWCtrl.text);
+                    if (emailCtrl.text.isNotEmpty &&
+                        passWCtrl.text.isNotEmpty) {
+                      login(emailCtrl.text, passWCtrl.text);
+                    } else {
+                      showAlertDialog(context,
+                          title: "Email or Password",
+                          content:
+                              "Make sure Email Field and Password Field is not empty before Submit",
+                          defaultActionText: "OK");
+                    }
                   },
+                  //
+
                   text: 'Create',
                 ),
                 const SizedBox(height: 25),
