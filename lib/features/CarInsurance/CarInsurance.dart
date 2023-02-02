@@ -2,6 +2,7 @@ import 'package:collard_greens/conponents/elevatedButton.dart';
 import 'package:flutter/material.dart';
 
 import '../../ui/colors/app_colors.dart';
+import 'devis/devisForm.dart';
 
 class CarInsurance extends StatelessWidget {
   const CarInsurance({super.key});
@@ -47,7 +48,8 @@ class CarInsurance extends StatelessWidget {
           Image.asset("assets/images/Screenshot_20230120-094206.jpg"),
           SizedBox(height: 25),
           Mainbutton(
-              onTap: (() {}),
+              onTap: (() { Navigator.push(context,
+                MaterialPageRoute(builder: (builder) => const DevisCarForm()));}),
               text: "faire son devis",
               btnColor: AppColors.mainGreen)
         ]),

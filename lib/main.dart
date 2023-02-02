@@ -3,6 +3,8 @@ import 'package:collard_greens/ui/colors/palette.dart';
 
 import 'package:flutter/material.dart';
 
+import 'features/CarInsurance/devis/devisForm.dart';
+
 void main() {
   runApp(const MyApp());
 }
